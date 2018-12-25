@@ -1,0 +1,339 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>H-Cube.ga CMS</title>
+	
+<style>
+	body,html,.full_bg{
+		height: 100%;
+	}
+	.full_bg{
+		position: absolute;
+		width: 100%;
+		background: url(../img/web_ui/bg.jpg);
+		background-position: center;
+		background-size: cover;
+		z-index: -1;
+	}
+	
+body, ul, li, fieldset, div, p{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+	
+	a:link,a:visited{
+		text-decoration: none; 
+		color: #222;
+	}
+	a:hover,a:active{
+		text-decoration: underline;
+	}
+body,button,lable {
+	font-family: Microsoft YaHei, WenQuanYi Micro Hei, Segoe, "华文细黑", "等线", "黑", "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Arial;
+}
+body {
+/*	background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(244,244,244,1.00));
+*/}
+header {
+	box-sizing: border-box;
+	display: block;
+	height: 90px;
+	width: 100%;
+	z-index: 100;
+	padding: 10px;
+	background: linear-gradient(to bottom, rgba(0,0,0,0.50), rgba(0,0,0,0));
+}
+.logo_content {
+	float: left;
+	margin: 5px;
+	z-index: 1000;
+}
+.logo_content svg {
+	display: inline-block;
+	vertical-align: middle;
+}
+.header_btn_group {
+	float: right;
+	margin: 22px 10px 22px 0px;
+}
+.header_btn_group_text {
+	font-size: 18px;
+	padding: 10px;
+	display: inline-block;
+	transition: 0.4s ease all;
+	cursor: pointer;
+}
+.header_btn_group_text:hover {
+	background: rgba(255,87,0,1.00);
+	color: rgba(255,255,255,1.00);
+}
+.header_btn_group_icon {
+	font-size: 38px;
+	padding: 6px 0px;
+	width: 40px;
+	text-align: center;
+	display: inline-block;
+	transition: 0.4s ease all;
+	cursor: pointer;
+	line-height: 30px;
+}
+.header_btn_group_icon:hover {
+	border-radius: 10px;
+	background: rgba(255,87,0,1.00);
+	color: rgba(255,255,255,1.00);
+}
+.footer {
+	position: absolute;
+	height: 80px;
+	clear: both;
+	width: 100%;
+	margin: 0 auto;
+	bottom: 0px;
+	z-index: 99;
+	background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+}
+.footer_content {
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 10px;
+}
+.footer_part {
+padding: 10px;}
+.footer_social_media {
+	display: inline-block;
+	float: left;
+	vertical-align: middle;
+}
+.footer_social_media svg {
+	height: 32px;
+	width: 32px;
+}
+.footer_item {
+	padding: 6px 7px;
+	margin: 0px;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+.footer_item:hover {
+	background-color: rgba(96,96,96,0.30);
+	border-radius: 15px;
+}
+.footer_item_icon {
+	padding: 8px;
+	margin: 2px;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+.footer_item_icon svg {
+	vertical-align: middle; /*垂直对齐图像*/
+}
+.footer_item_icon:hover {
+	background-color: rgba(244,244,244,0.10);
+	border-radius: 20px;
+	text-decoration: none;
+}
+.footer_part a:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.footer_part a:visited {
+	color: #FFFFFF;
+}
+.footer_part a:hover {
+	text-decoration: underline;
+}
+.footer_copyright {
+	color: white;
+	padding: 0px 10px 0px 0px;
+	display: inline-block;
+	transition: all 0.3s ease;
+	float: right;
+	vertical-align: middle;
+	line-height: 50px;
+}
+.sign_in_outer_box {
+	position: absolute;
+	left: 50%;
+	top:50%;
+	z-index: 2;
+	margin-left: -250px;
+	margin-top: -165px;
+	/*margin: 30px auto;*/
+	width: 500px;
+}
+.sign_in_box_title {
+	position: relative;
+	height: 80px;
+	width: 100%;
+	background: url(../img/web_ui/box_title_bg.svg) no-repeat center;
+	background-size: cover;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.sign_in_box_title span {
+	float: right;
+	line-height: 80px;
+	font-size: 30px;
+	margin-right: 20px;
+	color: white;
+}
+.sign_in_box_container {
+	height: 250px;
+	background: rgba(224,224,224,1.00);
+}
+.sign_in_box_form {
+	position: relative;
+	height: 250px;
+}
+.sign_in_box_form form {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	margin-left: -150px;
+	margin-left: -150px;
+}
+.sign_in_box_form form input[type="text"], .sign_in_box_form form input[type="password"] {
+	height: 40px;
+	margin: 10px 0px;
+	width: 300px;
+	border: 0;
+	border:1px solid rgba(82,82,82,1.00);
+}
+.sign_in_box_form form input[type="checkbox"] {
+	height: 24px;
+	width: 24px;
+}
+.sign_in_box_form button {
+	display: inline-block;
+	float: right;
+	vertical-align: middle;
+	height: 40px;
+	width: 80px;
+	background: rgba(255,63,0,1.00);
+	border: 0;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 20px;
+}
+#h2o_logo {
+	position: absolute;
+	left: 10px;
+	top: 5px;
+	height: 90px;
+}
+.sign_in_fail_msg {
+	clear: both;
+	margin: 0 auto;
+	text-align: center;
+	color:rgba(203,0,3,1.00);
+	display: none;
+}
+	
+.sign_up_link,.sign_in_link{
+	position: absolute;
+	right:0;
+	bottom: 0;
+	margin: 10px;
+}	
+	
+</style>
+</head>
+
+	<body>
+		<div class="full_bg"></div>
+
+<!--页面头部标题开始-->
+<header>
+      <div class="header_content">
+    <div class="logo_content">
+                <img height="80px" src="../img/cms_ui/logo_w.svg"/>
+
+        </div>
+    <div class="header_right"> </div>
+  </div>
+    </header>
+<!--页面头部标题结束--> 
+<!--主体部分开始-->
+<div class="main_wrap">
+      <div class="sign_in_outer_box">
+    <div class="sign_in_box_title">
+          <svg id="h2o_logo" data-name="h2o_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190.19 146.2">
+        <path d="M57.95,44.92l34.9,74.31-14.08,6.61L64.91,96.32l-29.6,13.9,13.86,29.52-14.08,6.61L.19,72l14.08-6.61L30.34,99.64l29.6-13.9L43.87,51.53Z" transform="translate(-0.19 -0.14)" style="fill:#ff571d"/>
+        <path d="M85.1,84l-2.56-5.44L110,65.63l8.8,18.74a2.61,2.61,0,0,1,.06,2.07,3.8,3.8,0,0,1-2.09,2.16L99.1,96.88l5.38,11.46L125,98.71l2.56,5.44-27.74,13L90.56,97.52a2.3,2.3,0,0,1-.23-1,3,3,0,0,1,.19-1,3.81,3.81,0,0,1,2.07-2.21L110.24,85l-4.95-10.54Z" transform="translate(-0.19 -0.14)" style="fill:#ff571d"/>
+        <path d="M157.4.14l32.53,69.27a4.55,4.55,0,0,1,.43,2.46,6,6,0,0,1-.73,2.32A7.62,7.62,0,0,1,188,76.14a8.85,8.85,0,0,1-2.1,1.4l-51.36,24.12L102.09,32.48a4.53,4.53,0,0,1-.43-2.46,6.3,6.3,0,0,1,.75-2.39,7.6,7.6,0,0,1,1.57-2A8.3,8.3,0,0,1,106,24.26Zm-9.11,17.19-29.6,13.9,25.08,53.4,29.6-13.9Z" transform="translate(-0.19 -0.14)" style="fill:#ff571d"/>
+      </svg>
+          <span>站务登录</span> </div>
+    <div class="sign_in_box_container">
+          <div class="sign_in_box_form">
+        <form id="sign_in_input_area" action="admin_panel.html" method="post">
+              <section>
+            <input onBlur="sign_in_check_name()" name="name" id="name" type="text" placeholder="登录名" />
+          </section>
+              <section>
+            <input onBlur="sign_in_check_password()" name="password" id="password" type="password" placeholder="密码" />
+          </section>
+              <section style="float: left;display: inline-block;line-height: 40px">
+            <input id="remember_name" type="checkbox" style="vertical-align: middle"/>
+            <lable style="vertical-align: middle">记住用户名</lable>
+          </section>
+              <button type="button" onClick="sign_in_box_check_all()">登录</button>
+              <div class="sign_in_fail_msg" id="sign_in_fail_msg">请输入您的用户名和密码</div>
+            </form>
+
+     <div class="sign_in_link"><a href="sign_up.html" target="new">注册一个账号</a></div>
+     
+      </div>
+        </div>
+  </div>
+    </div>
+<!--主体部分结束--> 
+<!--全页页脚开始-->
+<footer class="footer">
+      <div class="footer_content">
+    <div class="footer_part"> 
+          <!--全侧页脚社交媒体图片链接开始-->
+          <div class="footer_social_media">
+        <div class="footer_item_icon"> <a href="http://weibo.com/gogoend" target="_blank" >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024.01 829.57">
+            <path d="M75.3,654.9c0,119.3,155.3,215.9,346.7,215.9s346.7-96.6,346.7-215.9S613.5,439,422,439,75.3,535.6,75.3,654.9" transform="translate(0 -84.43)" style="fill:#fff"/>
+            <path d="M430.2,853.2c-169.6,16.8-315.9-59.9-327-171.1s117.6-215,287-231.9C559.8,433.4,706.1,510.1,717,621.3c11.2,111.4-117.4,215.3-286.8,231.9m339-369.5c-14.4-4.4-24.3-7.2-16.8-26.1,16.4-41.1,18.1-76.6.3-102-33.2-47.5-124.2-44.9-228.5-1.3,0,0-32.8,14.3-24.3-11.6,16-51.6,13.6-94.7-11.3-119.7-56.5-56.7-207,2.1-336,131.1C56.1,450.7,0,553.1,0,641.7,0,811,217.2,914,429.5,914,708,914,893.2,752.2,893.2,623.8c.2-77.7-65.2-121.8-124-140.1" transform="translate(0 -84.43)" style="fill:#e6162d"/>
+            <path d="M954.2,173.9c-67.3-74.6-166.4-103-258-83.5h0A39.17,39.17,0,0,0,712.6,167,192.71,192.71,0,0,1,936.3,414.8h0a39.2,39.2,0,0,0,74.6,24.1v-.1a270.82,270.82,0,0,0-56.7-264.9" transform="translate(0 -84.43)" style="fill:#f93"/>
+            <path d="M850.9,267.1a131.69,131.69,0,0,0-125.6-40.6,33.73,33.73,0,1,0,14,66h0a64.43,64.43,0,0,1,74.9,83h0a33.77,33.77,0,0,0,64.3,20.7,132.36,132.36,0,0,0-27.6-129.1" transform="translate(0 -84.43)" style="fill:#f93"/>
+            <path d="M439.6,651.7c-5.9,10.2-19.1,15-29.2,10.7-10.2-4.1-13.3-15.5-7.5-25.4s18.5-14.7,28.5-10.7c10.1,3.7,13.8,15.1,8.2,25.4M385.4,721c-16.4,26.1-51.6,37.6-78,25.6-26-11.9-33.8-42.2-17.4-67.8,16.2-25.4,50.2-36.7,76.4-25.7,26.7,11.4,35.2,41.5,19,67.9m61.7-185.1c-80.7-21.1-171.8,19.2-206.9,90.3-35.7,72.5-1.1,153,80.3,179.3,84.5,27.3,184-14.6,218.6-92.7,34.1-76.6-8.5-155.3-92-176.9" transform="translate(0 -84.43)"/>
+          </svg>
+          </a></div>
+        <div class="footer_item_icon"><a href="https://www.zhihu.com/people/gogoend/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 942.1 921.92">
+            <path d="M588.9,868.6h75.3L689,953.2l135-84.6H983.1V170.5H588.9ZM669,246.3H903V792.8H813.2L723.5,849l-16.3-56.1-38.3-.1.1-546.5ZM522.3,489.9H354.2c5.6-86.9,7.1-165.5,7.1-235.7H525.7s6.3-72.4-27.6-71.6H213.7q16.8-63.15,42.2-130.5s-77.4,0-103.7,69.2C141.3,149.8,109.7,259.7,53.6,372c18.9-2.1,81.5-3.8,118.4-71.3,6.8-18.9,8.1-21.4,16.5-46.6h92.8c0,33.7-3.8,214.6-5.4,235.7H108c-37.7,0-50,75.8-50,75.8H268.7C254.6,725.6,178.7,860.4,41,967c65.8,18.8,131.5-3,163.9-31.8,0,0,73.9-67.1,114.4-222.2L492.7,921.4s25.4-86.3-4-128.3C464.3,764.5,398.5,687,370.5,658.9l-47,37.2q21-67.35,25.3-130.5H546.9c-.2,0-.4-75.7-24.6-75.7Z" transform="translate(-41 -52.1)" style="fill:#0f88eb"/>
+          </svg>
+          </a> </div>
+        <div class="footer_item_icon"><a href="https://www.linkedin.com/in/jackie-han-7a6960102/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1021.3">
+            <path d="M947.4,2.7H76.6C34.1,2.7,0,36.7,0,76.5V950.2c0,39.7,34,73.8,76.6,73.8H947.4c42.5,0,76.6-34,76.6-73.8V76.5C1024,36.7,989.9,2.7,947.4,2.7Z" transform="translate(0 -2.7)" style="fill:#006192"/>
+            <path d="M153.1,385.6H303.4V873.5H153.1Zm76.6-241.1c48.2,0,87.9,39.7,87.9,87.9s-39.7,87.9-87.9,87.9-87.9-39.7-87.9-87.9c0-51,39.7-87.9,87.9-87.9" transform="translate(0 -2.7)" style="fill:#fff"/>
+            <path d="M399.9,385.6H544.6v65.2h2.8c19.9-39.7,70.9-79.4,144.7-79.4,153.2,0,181.5,102.1,181.5,232.6V870.7H723.3V632.4c0-56.7,0-130.5-79.4-130.5s-90.8,62.4-90.8,124.8V867.8H402.8V385.6Z" transform="translate(0 -2.7)" style="fill:#fff"/>
+          </svg>
+          </a> </div>
+        <div class="footer_item_icon"> <a href="https://github.com/gogoend/" target="_blank">
+          <svg id="c5f8442e-ac6d-414b-8da5-0bf587786c59"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1025">
+            <circle cx="512" cy="512" r="501.52" style="fill:#fff"/>
+            <path d="M512,0C229.25,0,0,229.25,0,512,0,738.25,146.69,930.13,350.16,997.81c25.59,4.69,34.94-11.12,34.94-24.62,0-12.19-.47-52.56-.72-95.31C242,908.81,211.91,817.5,211.91,817.5c-23.31-59.12-56.84-74.87-56.84-74.87-46.53-31.75,3.53-31.12,3.53-31.12,51.41,3.56,78.47,52.75,78.47,52.75,45.69,78.25,119.88,55.63,149,42.5,4.65-33,17.9-55.62,32.5-68.37C304.91,725.44,185.34,681.5,185.34,485.31c0-55.94,20-101.56,52.66-137.41-5.22-13-22.84-65.09,5.06-135.56,0,0,42.94-13.75,140.81,52.5,40.81-11.41,84.59-17,128.13-17.22,43.5.19,87.31,5.88,128.19,17.28,97.69-66.31,140.69-52.5,140.69-52.5,28,70.53,10.38,122.56,5.13,135.5,32.81,35.84,52.63,81.47,52.63,137.41,0,196.69-119.75,240-233.81,252.69,18.44,15.88,34.75,47,34.75,94.75,0,68.44-.69,123.63-.69,140.5,0,13.63,9.31,29.56,35.25,24.56C877.44,930,1024,738.13,1024,512,1024,229.25,794.75,0,512,0Z"/>
+          </svg>
+          </a> </div>
+      </div>
+          <!--全侧页脚社交媒体图片链接开始结束--> 
+          <!--全侧页脚版权信息开始-->
+          <div class="footer_copyright">
+        <p>&copy;2017 <a href="mailto:JackieHan@H-Cube.ga">JackieHan@H-Cube.ga</a></p>
+      </div>
+          <!--全页脚版权信息结束--> 
+        </div>
+  </div>
+    </footer>
+<!--全页页脚结束-->
+		<script src="../js/sign_in_ui.js"></script>
+</body>
+</html>

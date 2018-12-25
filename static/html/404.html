@@ -1,0 +1,479 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>您所查找的内容不存在 - 疯玩游戏 - H-Cube.ga</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+@font-face {
+	font-family: JackieHan_FontIcon;
+	src: url('../img/font_icon/hkj_icon.woff'), url('../img/font_icon/hkj_icon.ttf');
+}
+body, ol, ul, li, p, div, input, button {
+	font-family: Microsoft YaHei,WenQuanYi Micro Hei,Segoe, "华文细黑", "等线", "黑",  "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,  Noto Sans CJK SC,  Arial;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	font-size: 16px;
+}
+html {
+	height: 100%;
+	min-height: 600px;
+}
+body {
+	min-width: 480px;
+	height: 100%;
+}
+svg {
+	display: inline-block;
+}
+#bg_cloud_svg {
+	z-index: 10;
+	width: 120%;
+	max-width: 1000px;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%)
+}
+#bg_kite_svg {
+	width: 200%;
+	max-width: 300px;
+	z-index: 11;
+	top: 38%;
+	left: 10%;
+	transform: translate(-50%, -50%)
+}
+.font_icon {
+	font-family: JackieHan_FontIcon;
+}
+.main_content {
+	position: relative;
+	height: 100%;
+}
+.banner {
+	/*background: linear-gradient(to right,rgba(128,128,128,0),rgba(0,0,0,0.5),rgba(128,128,128,0));*/
+	background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(47,47,47,1.00));
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	margin: 0px auto;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+}
+.banner_container {
+	width: 0%;
+	margin: 0px auto;
+	display: block;
+	box-sizing: content-box;
+}
+.banner_title {
+	display: block;
+	color: white;
+	top: 33%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 12;
+	font-size: 150px;
+}
+	.banner_text{
+	display: block;
+	color: white;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 12;
+	font-size: 26px;
+	text-align: center;
+	word-break: keep-all;
+	}
+	.banner_button_group{
+	display: block;
+	color: white;
+	top: 75%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 12;
+	font-size: 18px;
+	}
+	.banner_button_group > a{
+		display: inline-block;
+		padding: 10px;
+		margin: 5px;
+		transition: 0.3s ease all;
+		cursor: pointer;
+		border:2px solid  rgba(255,87,0,1.00);
+		border-radius: 15px;
+	}
+	.banner_button_group > a:hover{
+		background: rgba(255,87,0,1.00);
+	}
+.banner_container > svg, .banner_container > div {
+	position: absolute;
+}
+header {
+	box-sizing: border-box;
+	position: absolute;
+	display: block;
+	height: 90px;
+	width: 100%;
+	z-index: 100;
+	padding: 10px;
+	background: linear-gradient(to bottom, rgba(0,0,0,0.50), rgba(0,0,0,0));
+}
+.header_content {
+	word-wrap: break-word;
+	margin: 0 auto;
+}
+.logo_content {
+	float: left;
+	margin: 5px;
+}
+.logo_content svg {
+	display: inline-block;
+	vertical-align: middle;
+}
+.header_btn_group {
+	float: right;
+	margin: 22px 10px 22px 0px;
+}
+.header_btn_group_text {
+	font-size: 18px;
+	padding: 10px;
+	display: inline-block;
+	transition: 0.4s ease all;
+	cursor: pointer;
+}
+.header_btn_group_text:hover {
+	background: rgba(255,87,0,1.00);
+	color: rgba(255,255,255,1.00);
+}
+.header_btn_group_icon {
+	font-size: 38px;
+	padding: 6px 0px;
+	width: 40px;
+	text-align: center;
+	display: inline-block;
+	transition: 0.4s ease all;
+	cursor: pointer;
+	line-height: 30px;
+}
+.header_btn_group_icon:hover {
+	border-radius: 10px;
+	background: rgba(255,87,0,1.00);
+	color: rgba(255,255,255,1.00);
+}
+.header_right {
+	float: right;
+}
+.mian_search {
+	position: absolute;
+	top:65%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border: rgba(255,95,0,1.00) solid 3px;
+	border-radius: 20px;
+	line-height: 40px;
+	min-width: 450px;
+}
+.mian_search input {
+	display: inline-block; 
+	float: left;
+	margin-left: 10px;
+	border: 0;
+	height: 40px;
+	width: 400px;
+	background: rgba(255,255,255,0.00);
+	color: #fff;
+	vertical-align: middle;
+}
+.mian_search button {
+	vertical-align: middle;
+	display: inline-block;
+	cursor: pointer;
+	float: right;
+	border: 0;
+	font-family: JackieHan_FontIcon;
+	font-weight: 600;
+	font-size: 26px;
+	color: white;
+	padding: 2px;
+	background: rgba(255,95,0,1.00);
+	border-radius: 0px 16px 16px 0px;
+	width: 40px;
+	height: 40px;
+	transition: 0.5s all ease;
+}
+.mian_search button span {
+	transition: 0.5s all ease;
+}
+.mian_search button:hover {
+	background: rgba(255,166,0,1.00);
+}
+.mian_search button:hover span {
+	transform: rotate(360deg)
+}
+footer {
+	clear: both;
+	width: 100%;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 0px;
+	z-index: 99;
+	background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+}
+.footer_content {
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 10px;
+}
+.footer_part {
+	padding: 10px;
+}
+	
+	.footer_social_media{
+		display: inline-block;
+		float:left;
+		vertical-align: middle;
+	}
+	
+.footer_social_media svg {
+	height: 32px;
+	width: 32px;
+}
+.footer_item {
+	padding: 6px 7px;
+	margin: 0px;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+.footer_item:hover {
+	background-color: rgba(96,96,96,0.30);
+	border-radius: 15px;
+}
+.footer_item_icon {
+	padding: 8px;
+	margin: 2px;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+.footer_item_icon svg {
+	vertical-align: middle; /*垂直对齐图像*/
+}
+.footer_item_icon:hover {
+	background-color: rgba(244,244,244,0.10);
+	border-radius: 20px;
+	text-decoration: none;
+}
+.footer_part a:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.footer_part a:visited {
+	color: #FFFFFF;
+}
+.footer_part a:hover {
+	text-decoration: underline;
+}
+.footer_copyright {
+	color: white;
+	padding: 0px 10px 0px 0px;
+	display: inline-block;
+	transition: all 0.3s ease;
+	float:right;
+	vertical-align: middle;
+	line-height: 50px;
+}
+	
+	.banner_button_group a:link,.banner_button_group a:visited,
+	.banner_button_group a:hover,.banner_button_group a:active{
+		color:#fff;
+		text-decoration: none;
+	}
+
+@media (max-width: 720px) {
+
+header {
+	height: 60px;
+	padding: 10px;
+}
+#logo_svg {
+	height: 50px !important;
+}
+#slogan_svg {
+	height: 30px !important;
+}
+
+	
+.banner_title {
+	font-size: 100px;
+}
+	
+	.banner_text{
+	font-size: 20px;
+	}
+	
+	.footer_social_media,.footer_copyright{
+		float: none;
+		display: block;
+		margin: 0 auto;
+		padding: 0px;
+	}
+	
+}
+</style>
+</head>
+
+<body>
+<div id="container" style="height: 100%"> 
+  <!--页面主要部分开始-->
+  <div class="main_content" id="main_content" > 
+    <!--页面头部标题开始-->
+    <header>
+      <div class="header_content">
+        <div class="logo_content">
+          <img height="70px" src="../img/cms_ui/logo_w.svg"/>
+        </div>
+        <div class="header_right">
+        </div>
+      </div>
+    </header>
+    <!--页面头部标题结束--> 
+    <!--banner开始-->
+    <div class="banner">
+      <div class="banner_container">
+        <svg id="bg_kite_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 522.62 616">
+          <defs>
+            <lineargradient id="1211fb83-54f1-4979-8ed1-617c1b7f6bc0" x1="87.39" y1="470.44" x2="114.42" y2="491.44" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#f15a24"/>
+              <stop offset="1" stop-color="#ed1c24"/>
+            </lineargradient>
+            <lineargradient id="6b665a92-929f-4727-9eb6-2048d15d00ea" x1="343.61" y1="224.28" x2="376.62" y2="249.92" xlink:href="#1211fb83-54f1-4979-8ed1-617c1b7f6bc0"/>
+            <lineargradient id="db649e6e-33cb-44ab-b17f-53e339c5c3e4" x1="241.65" y1="-366.98" x2="366.71" y2="-269.86" gradientTransform="matrix(0.79, 0.61, -0.61, 0.79, 7.53, 147.36)" xlink:href="#1211fb83-54f1-4979-8ed1-617c1b7f6bc0"/>
+            <lineargradient id="fa0a52cb-4d0c-4311-9bdb-2fdcc8cb2aaa" x1="200.2" y1="-447.7" x2="389.37" y2="-300.8" gradientTransform="matrix(0.79, 0.61, -0.61, 0.79, 7.53, 147.36)" xlink:href="#1211fb83-54f1-4979-8ed1-617c1b7f6bc0"/>
+            <lineargradient id="cefdca4c-2571-4dbd-8da1-e81223b30261" x1="180.89" y1="-272.85" x2="308.37" y2="-173.85" gradientTransform="matrix(0.79, 0.61, -0.61, 0.79, 7.53, 147.36)" xlink:href="#1211fb83-54f1-4979-8ed1-617c1b7f6bc0"/>
+            <lineargradient id="e49de7d8-a409-4ae2-a090-25229e0c53f0" x1="194.87" y1="-306.66" x2="331" y2="-200.94" gradientTransform="matrix(0.79, 0.61, -0.61, 0.79, 7.53, 147.36)" xlink:href="#1211fb83-54f1-4979-8ed1-617c1b7f6bc0"/>
+            <lineargradient id="5dfbb726-0dfb-4e03-94a3-5e21a2fd7f7b" x1="284.78" y1="324.81" x2="293.04" y2="331.22" gradientTransform="translate(238.11 -106.13) rotate(34.7)" xlink:href="#1211fb83-54f1-4979-8ed1-617c1b7f6bc0"/>
+            <lineargradient id="7c9740fd-dc68-48df-8579-23f7be36dace" x1="112.21" y1="589.09" x2="120.47" y2="595.51" gradientTransform="translate(548.29 -216.25) rotate(34.69)" xlink:href="#1211fb83-54f1-4979-8ed1-617c1b7f6bc0"/>
+            <lineargradient id="e0870610-e117-44e3-a5e4-825fb90808bc" x1="258.79" y1="40.16" x2="267.05" y2="46.57" gradientTransform="translate(470.23 116.57) rotate(124.69)" xlink:href="#1211fb83-54f1-4979-8ed1-617c1b7f6bc0"/>
+          </defs>
+          <path d="M1.5,616l-3-4a104.9,104.9,0,0,0,10.7-8.74l.14-.13c7.76-6.65,19.88-28.27,35.22-55.63,38.77-69.17,97.35-173.69,169.6-190.85l1.16,4.87c-70.11,16.65-128.06,120-166.4,188.43-16.14,28.8-27.82,49.63-36.25,56.92A109.3,109.3,0,0,1,1.5,616Z" transform="translate(1.5 0)" style="fill:url(#1211fb83-54f1-4979-8ed1-617c1b7f6bc0)"/>
+          <path d="M306.86,317.11l-2.56-4.29a197.82,197.82,0,0,0,34.37-26,197.69,197.69,0,0,0,61.94-136l5,.2a202.9,202.9,0,0,1-98.75,166Z" transform="translate(1.5 0)" style="fill:url(#6b665a92-929f-4727-9eb6-2048d15d00ea)"/>
+          <polygon points="516.47 0 340.52 50.95 423.01 102.23 516.47 0" style="fill:url(#db649e6e-33cb-44ab-b17f-53e339c5c3e4)"/>
+          <polygon points="509.68 155.62 522.62 3.44 428.34 105.04 509.68 155.62" style="fill:url(#fa0a52cb-4d0c-4311-9bdb-2fdcc8cb2aaa)"/>
+          <polygon points="338.16 56.3 286.4 252.02 419.33 106.95 338.16 56.3" style="fill:url(#cefdca4c-2571-4dbd-8da1-e81223b30261)"/>
+          <polygon points="423.63 110.72 289.53 254.89 503.61 160.63 423.63 110.72" style="fill:url(#e49de7d8-a409-4ae2-a090-25229e0c53f0)"/>
+          <rect x="281.03" y="325.01" width="15.77" height="6" transform="translate(-133.84 222.8) rotate(-34.7)" style="fill:url(#5dfbb726-0dfb-4e03-94a3-5e21a2fd7f7b)"/>
+          <rect x="298.98" y="333.99" width="15.77" height="6" transform="translate(-81.83 572.53) rotate(-78.8)" style="fill:url(#7c9740fd-dc68-48df-8579-23f7be36dace)"/>
+          <rect x="281.92" y="300.18" width="6" height="15.77" transform="translate(-33.33 579.8) rotate(-87.59)" style="fill:url(#e0870610-e117-44e3-a5e4-825fb90808bc)"/>
+        </svg>
+        <svg  id="bg_cloud_svg" data-name="bg_cloud_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1351 361">
+          <path d="M1259.16,129.9h-244.9a28.48,28.48,0,0,1-28.48-28.48h0A28.48,28.48,0,0,0,957.32,73h0a28.48,28.48,0,0,1-28.48-28.48h0A28.48,28.48,0,0,0,900.36,16H355.46A28.48,28.48,0,0,0,327,44.48h0A28.48,28.48,0,0,0,355.46,73h9.61a18.87,18.87,0,0,1,18.87,18.87h0a18.87,18.87,0,0,1-18.87,18.87H87.78a28.48,28.48,0,0,0-28.48,28.48h0a28.48,28.48,0,0,0,28.48,28.48h244.9a14.24,14.24,0,0,1,14.24,14.24h0a14.24,14.24,0,0,1-14.24,14.24H194.57a28.48,28.48,0,0,0-28.48,28.48h0a28.48,28.48,0,0,0,28.48,28.48h96.11a24.2,24.2,0,0,1,24.2,24.2h0a24.2,24.2,0,0,0,24.2,24.2H902.5a14.24,14.24,0,0,0,14.24-14.24h0A14.24,14.24,0,0,1,931,273h167.3a21.36,21.36,0,0,0,21.36-21.36h0A21.36,21.36,0,0,1,1141,230.28h43.78a21.71,21.71,0,0,0,21.71-21.71h0a21.71,21.71,0,0,1,21.71-21.71h31a28.48,28.48,0,0,0,28.48-28.48h0A28.48,28.48,0,0,0,1259.16,129.9Z" transform="translate(0 0)" style="fill:#ffa161;opacity:0.76"/>
+          <path d="M1322.52,129.9h-244.9a28.48,28.48,0,0,1-28.48-28.48h0A28.48,28.48,0,0,0,1020.68,73h0A28.48,28.48,0,0,1,992.2,44.48h0A28.48,28.48,0,0,0,963.72,16H418.82a28.48,28.48,0,0,0-28.48,28.48h0A28.48,28.48,0,0,0,418.82,73h9.61A18.87,18.87,0,0,1,447.3,91.82h0a18.87,18.87,0,0,1-18.87,18.87H151.14a28.48,28.48,0,0,0-28.48,28.48h0a28.48,28.48,0,0,0,28.48,28.48H396a14.24,14.24,0,0,1,14.24,14.24h0A14.24,14.24,0,0,1,396,196.11H257.93a28.48,28.48,0,0,0-28.48,28.48h0a28.48,28.48,0,0,0,28.48,28.48H354a24.2,24.2,0,0,1,24.2,24.2h0a24.2,24.2,0,0,0,24.2,24.2H965.86a14.24,14.24,0,0,0,14.24-14.24h0A14.24,14.24,0,0,1,994.34,273h167.3A21.36,21.36,0,0,0,1183,251.64h0a21.36,21.36,0,0,1,21.36-21.36h43.78a21.71,21.71,0,0,0,21.71-21.71h0a21.71,21.71,0,0,1,21.71-21.71h31A28.48,28.48,0,0,0,1351,158.38h0A28.48,28.48,0,0,0,1322.52,129.9Z" transform="translate(0 0)" style="fill:#ff791f;opacity:0.78"/>
+          <path d="M1286.22,143.43h-244.9A28.48,28.48,0,0,1,1012.85,115h0a28.48,28.48,0,0,0-28.48-28.48h0A28.48,28.48,0,0,1,955.89,58h0a28.48,28.48,0,0,0-28.48-28.48H382.51A28.48,28.48,0,0,0,354,58h0a28.48,28.48,0,0,0,28.48,28.48h9.61A18.87,18.87,0,0,1,411,105.34h0a18.87,18.87,0,0,1-18.87,18.87H114.84a28.48,28.48,0,0,0-28.48,28.48h0a28.48,28.48,0,0,0,28.48,28.48h244.9A14.24,14.24,0,0,1,374,195.4h0a14.24,14.24,0,0,1-14.24,14.24H221.62a28.48,28.48,0,0,0-28.48,28.48h0a28.48,28.48,0,0,0,28.48,28.48h96.11a24.2,24.2,0,0,1,24.2,24.2h0a24.2,24.2,0,0,0,24.2,24.2H929.55a14.24,14.24,0,0,0,14.24-14.24h0A14.24,14.24,0,0,1,958,286.52h167.3a21.36,21.36,0,0,0,21.36-21.36h0A21.36,21.36,0,0,1,1168,243.81h43.78a21.71,21.71,0,0,0,21.71-21.71h0a21.71,21.71,0,0,1,21.71-21.71h31a28.48,28.48,0,0,0,28.48-28.48h0A28.48,28.48,0,0,0,1286.22,143.43Z" transform="translate(0 0)" style="fill:#f96500"/>
+          <rect y="297" width="163" height="56" rx="28" ry="28" style="fill:#ffa161;opacity:0.76"/>
+          <rect x="38" y="287" width="163" height="56" rx="28" ry="28" style="fill:#ff791f;opacity:0.78"/>
+          <rect x="13" y="305" width="163" height="56" rx="28" ry="28" style="fill:#ff6700"/>
+          <rect x="123" y="10" width="108.67" height="56" rx="28" ry="28" style="fill:#ffa161;opacity:0.76"/>
+          <rect x="139.33" y="12" width="108.67" height="56" rx="28" ry="28" style="fill:#ff791f;opacity:0.78"/>
+          <rect x="260" y="243" width="108.67" height="56" rx="28" ry="28" style="fill:#ffa161;opacity:0.76"/>
+          <rect x="289.33" y="236" width="108.67" height="56" rx="28" ry="28" style="fill:#ff791f;opacity:0.78"/>
+          <rect x="272.67" y="248" width="108.67" height="56" rx="28" ry="28" style="fill:#ff6700"/>
+          <rect x="923" y="8.24" width="127.84" height="65.88" rx="32.94" ry="32.94" style="fill:#ffa161;opacity:0.76"/>
+          <rect x="957.51" width="127.84" height="65.88" rx="32.94" ry="32.94" style="fill:#ff791f;opacity:0.78"/>
+          <rect x="937.9" y="14.12" width="127.84" height="65.88" rx="32.94" ry="32.94" style="fill:#ff6700"/>
+          <rect x="1018" y="248" width="108.67" height="56" rx="28" ry="28" style="fill:#ffa161;opacity:0.76"/>
+          <rect x="1047.33" y="241" width="108.67" height="56" rx="28" ry="28" style="fill:#ff791f;opacity:0.78"/>
+          <rect x="1030.67" y="253" width="108.67" height="56" rx="28" ry="28" style="fill:#ff6700"/>
+          <rect x="1214" y="50" width="67.72" height="56" rx="28" ry="28" style="fill:#ffa161;opacity:0.76"/>
+          <rect x="1232.28" y="47" width="67.72" height="56" rx="28" ry="28" style="fill:#ff791f;opacity:0.78"/>
+          <rect x="1221.89" y="57" width="67.72" height="56" rx="28" ry="28" style="fill:#ff6700"/>
+          <rect x="146.67" y="29" width="108.67" height="56" rx="28" ry="28" style="fill:#ff6700"/>
+        </svg>
+        <div class="banner_title">404</div>
+        <div class="banner_text">
+        您访问的页面没找到<br />
+有点尴尬，不如来试试...
+      </div>
+		  <div class="banner_button_group">
+			  <a href="javascript:history.go(-1);">返回上一页</a>
+			  <a href="../index.html">返回主页</a>
+		  </div>
+
+           <div class="mian_search">
+              <form>
+                <input type="text" placeholder="输入要搜索的内容">
+                <button onClick="javascript:vold()"> <span>s</span> </button>
+              </form>
+            </div>
+     
+      </div>
+    </div>
+    <!--banner结束--> 
+    
+    <!--全页页脚开始-->
+    <footer class="footer">
+      <div class="footer_content">
+        <div class="footer_part"> 
+          <!--全侧页脚社交媒体图片链接开始-->
+          <div class="footer_social_media">
+            <div class="footer_item_icon"> <a href="http://weibo.com/gogoend" target="_blank" >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024.01 829.57">
+                <path d="M75.3,654.9c0,119.3,155.3,215.9,346.7,215.9s346.7-96.6,346.7-215.9S613.5,439,422,439,75.3,535.6,75.3,654.9" transform="translate(0 -84.43)" style="fill:#fff"/>
+                <path d="M430.2,853.2c-169.6,16.8-315.9-59.9-327-171.1s117.6-215,287-231.9C559.8,433.4,706.1,510.1,717,621.3c11.2,111.4-117.4,215.3-286.8,231.9m339-369.5c-14.4-4.4-24.3-7.2-16.8-26.1,16.4-41.1,18.1-76.6.3-102-33.2-47.5-124.2-44.9-228.5-1.3,0,0-32.8,14.3-24.3-11.6,16-51.6,13.6-94.7-11.3-119.7-56.5-56.7-207,2.1-336,131.1C56.1,450.7,0,553.1,0,641.7,0,811,217.2,914,429.5,914,708,914,893.2,752.2,893.2,623.8c.2-77.7-65.2-121.8-124-140.1" transform="translate(0 -84.43)" style="fill:#e6162d"/>
+                <path d="M954.2,173.9c-67.3-74.6-166.4-103-258-83.5h0A39.17,39.17,0,0,0,712.6,167,192.71,192.71,0,0,1,936.3,414.8h0a39.2,39.2,0,0,0,74.6,24.1v-.1a270.82,270.82,0,0,0-56.7-264.9" transform="translate(0 -84.43)" style="fill:#f93"/>
+                <path d="M850.9,267.1a131.69,131.69,0,0,0-125.6-40.6,33.73,33.73,0,1,0,14,66h0a64.43,64.43,0,0,1,74.9,83h0a33.77,33.77,0,0,0,64.3,20.7,132.36,132.36,0,0,0-27.6-129.1" transform="translate(0 -84.43)" style="fill:#f93"/>
+                <path d="M439.6,651.7c-5.9,10.2-19.1,15-29.2,10.7-10.2-4.1-13.3-15.5-7.5-25.4s18.5-14.7,28.5-10.7c10.1,3.7,13.8,15.1,8.2,25.4M385.4,721c-16.4,26.1-51.6,37.6-78,25.6-26-11.9-33.8-42.2-17.4-67.8,16.2-25.4,50.2-36.7,76.4-25.7,26.7,11.4,35.2,41.5,19,67.9m61.7-185.1c-80.7-21.1-171.8,19.2-206.9,90.3-35.7,72.5-1.1,153,80.3,179.3,84.5,27.3,184-14.6,218.6-92.7,34.1-76.6-8.5-155.3-92-176.9" transform="translate(0 -84.43)"/>
+              </svg>
+              </a></div>
+            <div class="footer_item_icon"><a href="https://www.zhihu.com/people/gogoend/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 942.1 921.92">
+                <path d="M588.9,868.6h75.3L689,953.2l135-84.6H983.1V170.5H588.9ZM669,246.3H903V792.8H813.2L723.5,849l-16.3-56.1-38.3-.1.1-546.5ZM522.3,489.9H354.2c5.6-86.9,7.1-165.5,7.1-235.7H525.7s6.3-72.4-27.6-71.6H213.7q16.8-63.15,42.2-130.5s-77.4,0-103.7,69.2C141.3,149.8,109.7,259.7,53.6,372c18.9-2.1,81.5-3.8,118.4-71.3,6.8-18.9,8.1-21.4,16.5-46.6h92.8c0,33.7-3.8,214.6-5.4,235.7H108c-37.7,0-50,75.8-50,75.8H268.7C254.6,725.6,178.7,860.4,41,967c65.8,18.8,131.5-3,163.9-31.8,0,0,73.9-67.1,114.4-222.2L492.7,921.4s25.4-86.3-4-128.3C464.3,764.5,398.5,687,370.5,658.9l-47,37.2q21-67.35,25.3-130.5H546.9c-.2,0-.4-75.7-24.6-75.7Z" transform="translate(-41 -52.1)" style="fill:#0f88eb"/>
+              </svg>
+              </a> </div>
+            <div class="footer_item_icon"><a href="https://www.linkedin.com/in/jackie-han-7a6960102/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1021.3">
+                <path d="M947.4,2.7H76.6C34.1,2.7,0,36.7,0,76.5V950.2c0,39.7,34,73.8,76.6,73.8H947.4c42.5,0,76.6-34,76.6-73.8V76.5C1024,36.7,989.9,2.7,947.4,2.7Z" transform="translate(0 -2.7)" style="fill:#006192"/>
+                <path d="M153.1,385.6H303.4V873.5H153.1Zm76.6-241.1c48.2,0,87.9,39.7,87.9,87.9s-39.7,87.9-87.9,87.9-87.9-39.7-87.9-87.9c0-51,39.7-87.9,87.9-87.9" transform="translate(0 -2.7)" style="fill:#fff"/>
+                <path d="M399.9,385.6H544.6v65.2h2.8c19.9-39.7,70.9-79.4,144.7-79.4,153.2,0,181.5,102.1,181.5,232.6V870.7H723.3V632.4c0-56.7,0-130.5-79.4-130.5s-90.8,62.4-90.8,124.8V867.8H402.8V385.6Z" transform="translate(0 -2.7)" style="fill:#fff"/>
+              </svg>
+              </a> </div>
+            <div class="footer_item_icon"> <a href="https://github.com/gogoend/" target="_blank">
+              <svg id="c5f8442e-ac6d-414b-8da5-0bf587786c59"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1025">
+                <circle cx="512" cy="512" r="501.52" style="fill:#fff"/>
+                <path d="M512,0C229.25,0,0,229.25,0,512,0,738.25,146.69,930.13,350.16,997.81c25.59,4.69,34.94-11.12,34.94-24.62,0-12.19-.47-52.56-.72-95.31C242,908.81,211.91,817.5,211.91,817.5c-23.31-59.12-56.84-74.87-56.84-74.87-46.53-31.75,3.53-31.12,3.53-31.12,51.41,3.56,78.47,52.75,78.47,52.75,45.69,78.25,119.88,55.63,149,42.5,4.65-33,17.9-55.62,32.5-68.37C304.91,725.44,185.34,681.5,185.34,485.31c0-55.94,20-101.56,52.66-137.41-5.22-13-22.84-65.09,5.06-135.56,0,0,42.94-13.75,140.81,52.5,40.81-11.41,84.59-17,128.13-17.22,43.5.19,87.31,5.88,128.19,17.28,97.69-66.31,140.69-52.5,140.69-52.5,28,70.53,10.38,122.56,5.13,135.5,32.81,35.84,52.63,81.47,52.63,137.41,0,196.69-119.75,240-233.81,252.69,18.44,15.88,34.75,47,34.75,94.75,0,68.44-.69,123.63-.69,140.5,0,13.63,9.31,29.56,35.25,24.56C877.44,930,1024,738.13,1024,512,1024,229.25,794.75,0,512,0Z"/>
+              </svg>
+              </a> </div>
+          </div>
+          <!--全侧页脚社交媒体图片链接开始结束--> 
+          <!--全侧页脚版权信息开始-->
+          <div class="footer_copyright">
+            <p>©2017 <a href="mailto:JackieHan@H-Cube.ga">JackieHan@H-Cube.ga</a></p>
+          </div>
+          <!--全页脚版权信息结束--> 
+        </div>
+      </div>
+    </footer>
+    <!--全页页脚结束--> 
+    
+  </div>
+  <!--页面主要部分结束--> 
+</div>
+
+	<!--百度统计代码-->
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e246523d803ea7e3b3ac516316d773aa";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

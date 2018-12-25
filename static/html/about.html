@@ -1,0 +1,414 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>JackieOnline - 关于本站</title>
+<link href="../css/global.css">
+<style>
+@keyframes element_rot {
+ from {
+transform: rotate(0deg);
+}
+ to {
+transform:rotate(360deg);
+}
+}
+ @keyframes element_scale {
+ from {
+transform: scale(0.8, 0.8)
+}
+ to {
+transform:scale(1, 1);
+}
+}
+@font-face {
+	font-family: JackieHan_FontIcon;
+	src: url('../img/font_icon/hkj_icon.woff'), url('../img/font_icon/hkj_icon.ttf');
+}
+body, ol, ul, li, p, div, input, button {
+	font-family: Microsoft YaHei, WenQuanYi Micro Hei, Segoe, "华文细黑", "等线", "黑", "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Arial;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	font-size: 16px;
+}
+body {
+	margin: 0;
+	padding: 0;
+	min-width: 720px;
+}
+html, body, .screen, .screen_wrap, .screen_bg {
+	height: 100%;
+	width: 100%;
+}
+.screen_bg {
+	position: absolute;
+	z-index: -99;
+	background-size: cover;
+	background-position: center center;
+}
+.side_ctrl {
+	position: fixed;
+	height: 64px;
+	background: rgba(0,0,0,0.4);
+	width: 64px;
+	z-index: 999;
+	line-height: 64px;
+	text-align: center;
+	color: #fff;
+	font-size: 45px;
+	border: rgba(255,255,255,1.00) solid 2px;
+	border-radius: 64px;
+	transition: 0.3s ease all;
+	cursor: pointer;
+}
+	
+	.side_ctrl:hover {
+	background: rgba(0,0,0,0.9);
+	border: rgba(255,255,255,1.00) solid 2px;
+}
+	
+.side_ctrl span{
+	font-family: JackieHan_FontIcon;
+	user-select:none;
+}
+.rotating {
+	animation: element_rot infinite 3s linear;
+}
+.screen_wrap {
+	transition: 0.5s ease-in-out all;
+}
+.screen {
+	position: relative;
+	overflow: hidden;
+}
+
+[name^="screen_ele_"] {
+	position: absolute;
+	transition: 0.8s ease-in-out all;
+}
+.screen_wrap a:link, .screen_wrap a:visited {
+	color: #fff;
+	text-decoration: none;
+	transition: 0.3s ease all;
+	padding: 4px 10px;
+	border-radius: 3px;
+	background: rgba(0,0,0,0.2);
+}
+.screen_wrap a:hover, .screen_wrap a:visited {
+	text-decoration: underline;
+}
+footer {
+	clear: both;
+	width: 100%;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 0px;
+	z-index: 99;
+	background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+}
+.footer_content {
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 10px;
+}
+.footer_part {
+	padding: 10px;
+}
+.footer_social_media {
+	display: inline-block;
+	float: left;
+	vertical-align: middle;
+}
+.footer_social_media svg {
+	height: 32px;
+	width: 32px;
+}
+.footer_item {
+	padding: 6px 7px;
+	margin: 0px;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+.footer_item:hover {
+	background-color: rgba(96,96,96,0.30);
+	border-radius: 15px;
+}
+.footer_item_icon {
+	padding: 8px;
+	margin: 2px;
+	display: inline-block;
+	transition: all 0.3s ease;
+}
+.footer_item_icon svg {
+	vertical-align: middle; /*垂直对齐图像*/
+}
+.footer_item_icon:hover {
+	background-color: rgba(244,244,244,0.10);
+	border-radius: 20px;
+	text-decoration: none;
+}
+.footer_part a:link {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.footer_part a:visited {
+	color: #FFFFFF;
+}
+.footer_part a:hover {
+	text-decoration: underline;
+}
+.footer_copyright {
+	color: white;
+	padding: 0px 10px 0px 0px;
+	display: inline-block;
+	transition: all 0.3s ease;
+	float: right;
+	vertical-align: middle;
+	line-height: 50px;
+}
+</style>
+</head>
+
+<body id="body" >
+<audio id="page_bgm" loop autoplay>
+  <source src="../audio/about_bgm.ogg" type="audio/ogg">
+  <source src="../audio/about_bgm.mp3" type="audio/mpeg">
+</audio>
+<div class="rotating side_ctrl" id="bgm_ctrl" style="top: 10px;right:10px;"><span>n</span></div>
+	<a href="../index.html"><div class="side_ctrl" style="bottom: 50px;right:10px;"><span>H</span></div></a>
+<div class="screen_wrap" id="screen_wrap">
+  <section class="screen" >
+    <div class="screen_bg" style="background:linear-gradient(to bottom,rgba(0,128,255,1),rgba(0,117,227,1.00))"></div>
+    <div name="screen_ele_0" 
+	  style="
+	  color: #fff;
+	  text-align: left;
+	  top:50%;
+	  font-size: 50px;
+	  z-index:4;
+	  right:-100%;
+	  transform: translate(50%,-50%);
+	  white-space: nowrap
+	  "
+	  data-style="
+	  color: #fff;
+	  text-align: left;
+	  top:50%;
+	  font-size: 50px;
+	  z-index:4;
+	  right:50%;
+	  transform: translate(50%,-50%);
+	  ">您好<br/>
+      欢迎访问本站的自述文档 </div>
+    <svg name="screen_ele_0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.94 343.23" style="width:300px;height:300px;top:200px;animation:element_rot 10s linear infinite reverse">
+      <polygon points="297.25 283.13 133.78 343.23 0 231.71 29.69 60.1 193.16 0 326.94 111.52 297.25 283.13" style="fill:#fff;opacity:0.42"/>
+    </svg>
+    <svg name="screen_ele_0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.94 343.23" style="width:80px;height:80px;left:500px;top:40px;animation:element_rot 10s linear infinite reverse">
+      <polygon points="297.25 283.13 133.78 343.23 0 231.71 29.69 60.1 193.16 0 326.94 111.52 297.25 283.13" style="fill:#fff;opacity:0.42"/>
+    </svg>
+    <svg name="screen_ele_0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.94 343.23" style="width:400px;height:400px;left:300px;top:80px;animation:element_rot 10s linear infinite">
+      <polygon points="297.25 283.13 133.78 343.23 0 231.71 29.69 60.1 193.16 0 326.94 111.52 297.25 283.13" style="fill:#fff;opacity:0.42"/>
+    </svg>
+    <svg name="screen_ele_0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.94 343.23" style="width:500px;height:500px;left:100px;top:40%;animation:element_rot 10s linear infinite">
+      <polygon points="297.25 283.13 133.78 343.23 0 231.71 29.69 60.1 193.16 0 326.94 111.52 297.25 283.13" style="fill:#fff;opacity:0.22"/>
+    </svg>
+    <svg name="screen_ele_0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.94 343.23" style="width:500px;height:500px;right:100px;top:40%;animation:element_rot 10s linear infinite reverse">
+      <polygon points="297.25 283.13 133.78 343.23 0 231.71 29.69 60.1 193.16 0 326.94 111.52 297.25 283.13" style="fill:#fff;opacity:0.12"/>
+    </svg>
+    <svg name="screen_ele_0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326.94 343.23" style="width:500px;height:500px;left:100px;top:90%;animation:element_rot 10s linear infinite reverse">
+      <polygon points="297.25 283.13 133.78 343.23 0 231.71 29.69 60.1 193.16 0 326.94 111.52 297.25 283.13" style="fill:#fff;opacity:0.42"/>
+    </svg>
+  </section>
+  <section class="screen" >
+    <div class="screen_bg" style="background:rgba(0,170,69,1.00)"></div>
+    <div name="screen_ele_1" 
+    style="
+    top:-100%;
+    right:50%;
+    transform: translate(50%,-50%);
+    color:#fff;
+    white-space: nowrap;
+    z-index:5;
+    opacity:0;
+    "
+    
+    data-style="opacity:1;top:50%;right:50%;transform: translate(50%,-50%);color:#fff;white-space: nowrap;z-index:5"
+    
+    
+    > <span style="display:block;font-size: 28px;margin: 10px;">在本文档中<br/>
+      我将向您简单介绍<br/>
+      我的网站所用到的一些技术</span> <br/>
+      <a style="font-size: 20px" target="_blank" href="https://github.com/gogoend/jackieOnline/wiki/H-Cube.ga-CMS-自述">查看完整版开发文档，请点击此处转到本项目在GitHub上的Wiki</a> </div>
+    <svg name="screen_ele_1" style="top:10%;left:200px;height: 200px;width:200px;animation:element_scale 0.4s linear infinite alternate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.24 347.64">
+      <polygon points="303.01 333.77 188.67 282.51 81.61 347.64 95.03 223.05 0 141.36 122.64 115.62 170.97 0 233.35 108.69 358.24 118.92 274.15 211.83 303.01 333.77" style="fill:#3fff00;opacity:0.3"/>
+    </svg>
+    <svg name="screen_ele_1" style="bottom:30%;right:100px;height: 200px;width:200px;animation:element_scale 0.3s linear infinite alternate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.24 347.64">
+      <polygon points="303.01 333.77 188.67 282.51 81.61 347.64 95.03 223.05 0 141.36 122.64 115.62 170.97 0 233.35 108.69 358.24 118.92 274.15 211.83 303.01 333.77" style="fill:#3fff00;opacity:0.3"/>
+    </svg>
+  </section>
+  <section class="screen" >
+    <div class="screen_bg" style="background:rgba(0,150,255,1.00)"></div>
+    <svg name="screen_ele_2" style="width:350px;height: 350px;bottom:-100%;left:10%;transform: translateY(50%)" 
+     
+     data-style="width:350px;height: 350px;bottom:50%;left:10%;transform: translateY(50%)"
+     
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1026.51 930">
+      <defs>
+        <linearGradient id="a" x1="-921.11" y1="804.9" x2="-921.11" y2="234.11" gradientTransform="translate(1661.23 -130.54)" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#fff"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="b" x1="-619.89" y1="902.87" x2="-619.89" y2="332.08" gradientTransform="translate(1058.77 -326.48)" xlink:href="#a"/>
+        <linearGradient id="c" x1="-361.07" y1="825.37" x2="-361.07" y2="254.58" gradientTransform="translate(541.13 -171.48)" xlink:href="#a"/>
+        <linearGradient id="d" x1="-799.01" y1="553.39" x2="-799.01" y2="-17.4" gradientTransform="translate(1417.03 372.48)" xlink:href="#a"/>
+        <linearGradient id="e" x1="-500.71" y1="677.68" x2="-500.71" y2="106.89" gradientTransform="translate(820.42 123.9)" />
+      </defs>
+      <rect x="454.97" y="97.97" width="570.28" height="580.52" rx="55.29" ry="55.29" transform="translate(1481.48 776.46) rotate(180)" style="fill:url(#a)"/>
+      <rect x="259.03" width="359.72" height="580.52" rx="55.29" ry="55.29" transform="translate(879.03 580.52) rotate(180)" style="fill:url(#b)"/>
+      <rect x="-1.25" y="77.5" width="362.64" height="580.52" rx="55.29" ry="55.29" transform="translate(361.39 735.52) rotate(180)" style="fill:url(#c)"/>
+      <rect x="295.59" y="349.48" width="644.86" height="580.52" rx="55.29" ry="55.29" transform="translate(1237.28 1279.48) rotate(180)" style="fill:url(#d)"/>
+      <rect x="95.25" y="225.19" width="448.91" height="580.52" rx="55.29" ry="55.29" transform="translate(640.68 1030.9) rotate(180)" style="fill:url(#e)"/>
+    </svg>
+    <div name="screen_ele_2" style="color:#fff;top:50%;right:-100%;transform: translateY(-50%)" 
+	  data-style="color:#fff;top:50%;right:10%;transform: translateY(-50%)"> <span style="font-size: 30px">CSS3+JavaScript</span> <br/>
+      <span style="font-size: 20px">正如您眼前所见<br/>
+      本文档中的内容便是由Js控制CSS来进行展现的</span> </div>
+  </section>
+  <section class="screen">
+    <div class="screen_bg" style="background:linear-gradient(125deg,rgba(255,0,0,1),rgba(215,160,0,1.00))"></div>
+    <svg name="screen_ele_3" style="height: 150px;width:300px; top:50%;left:-100%;transform: translateY(-50%);opacity: 1"  data-style="top:50%;left:16%;transform: translateY(-50%);opacity:1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.01 165.54">
+      <path d="M326.23,103.26l-20.66,4.23c8.45,7.71,18.7,11.85,23.56,21.68-8.87-9.17-24.57-9.65-30.39-24.77l21-3.87a3.36,3.36,0,0,0-.82-1.35C311.45,94,304.48,88,295.28,85.93a11.21,11.21,0,0,1-8.2-6.65c-3.66-8-7.37-16-11-24-8.47-18.75-21.93-32.4-41-40.3a2.2,2.2,0,0,0-.84-.26c-9.42.31-16.79-5-24.67-8.92a11.85,11.85,0,0,0-3.77-1.16C203,4.3,201.17,6.4,202.29,9c1,2.25,2.67,4.18,3.88,6.35,2.9,5.22,6.25,10.27,8.39,15.79,2.35,6,4.27,12,8.52,17.22,1.27,1.55.82,5.32,0,7.66-3.31,9.23-3.76,18.38-.19,27.54a20.08,20.08,0,0,0,4.75,6.54C230,83.25,229,75.59,234.76,71l15.93,28.89-.66.61L235,81.63c-.44,2.4-.87,5.24-1.5,8-1.13,5-5.8,6.77-9,2.76A39.06,39.06,0,0,1,218,79.32c-2.57-8.62-.33-17.16,1.89-25.6a5.75,5.75,0,0,0-.05-3.61C217,44.2,214,38.34,211,32.53c-2.74-5.28-5.24-10.75-8.57-15.64-4.2-6.17-5.42-10.45-2.68-14,2.5-3.24,7.59-4.21,13.77-.51,7.94,4.75,16.72,6.24,25.14,9.22,13.54,4.79,24.24,14.28,32.7,25.85,4,5.51,7,11.82,10.22,17.87a94.39,94.39,0,0,1,4.52,10c3.63,9.23,8.57,16.45,18.8,20.32C313.25,88.82,320.36,95.06,326.23,103.26Z" style="fill:#fff"/>
+      <path d="M140,128.47v27H133.3c0-9.89-.23-19.69.24-29.45.07-1.5,3.15-3.58,5.18-4.12,3.38-.9,6.74-.21,8.4,3.69,2.88,6.75,5.83,13.46,8.76,20.18.63,1.45,1.31,2.88,2.34,5.13,3.78-8.49,7.23-16.23,10.66-24,1.32-3,3-5.25,6.76-5.3,5.91-.08,7.66,1.43,7.67,7.35,0,8.52-.06,17-.11,25.57,0,.26-.23.51-.44,1h-6.2V128.17l-.84-.2c-3.39,7.5-6.85,15-10.14,22.5-1.37,3.14-2.84,5.56-6.93,5.57s-6-2-7.47-5.46c-3.19-7.52-6.68-14.91-10-22.36Z" style="fill:#fff"/>
+      <path d="M301.42,160c-1.76-.5-4.57-.48-5.11-1.58-2.25-4.58-6.09-3.62-9.78-3.64-4.11,0-8.28.33-12.31-.29-3.63-.56-6.38-2.56-6.08-7.19.31-4.82-.07-9.68,0-14.51.09-5.2,2.42-9.21,7.26-9.48,7.6-.42,15.31.33,22.92,1.11,3.26.34,4.67,3,4.54,6.51-.16,4.1,0,8.21,0,12.32,0,2.65.07,5.05-2,7.55-1.26,1.56-.33,4.9-.38,7.44Zm-6-9.29c.67-1,1.64-1.87,1.66-2.72a166.32,166.32,0,0,0-.21-18c-.12-1.34-2.94-3.26-4.7-3.47-4-.49-8.19-.11-12.29-.07-3.62,0-5.33,1.91-5.3,5.51,0,4.54.16,9.1,0,13.63-.16,3.93,1.91,5.66,5.4,6a62.43,62.43,0,0,0,6.65,0v-5.35Z" style="fill:#fff"/>
+      <path d="M190.49,165.46v-4c7.29,0,14.46.09,21.63,0,4.59-.08,5.4-1.16,4.73-6.1H204.26a43,43,0,0,1-6.58-.39c-5.91-1-7.61-3.18-7.57-9.19v-13h6.7c0,4.3.2,8.77-.06,13.22-.25,4.12,1.7,5.59,5.45,5.58,4,0,7.94-.12,11.91.05,2.79.12,3.54-1.07,3.46-3.65-.14-5,0-10,0-15.24h6.69c0,8.86.27,17.64-.12,26.4-.18,4.13-3.82,6.08-7.47,6.23C208,165.69,199.34,165.46,190.49,165.46Z" style="fill:#fff"/>
+      <path d="M262.15,124c-5.75,3.66-12,1.75-18.07,1.63-4.91-.1-7.43,2.08-7.26,6.34.16,3.95,2.1,5.38,6.9,5.41,3.64,0,7.3.15,10.92.5,4.41.42,6.33,2.79,6.59,7.63.27,5.14-1.44,8.63-5.69,9-7.43.6-14.94.35-22.41.34-.62,0-1.24-.9-2.89-2.18a52.49,52.49,0,0,1,5.48-.78c4.7-.09,9.4.1,14.09-.13,3.43-.17,6.26-1.14,6.11-5.71-.15-4.39-2.5-5.43-6.25-5.48-3.52,0-7-.26-10.54-.59s-7.32-1.14-7.92-5.52c-.55-4.07-.48-7.25,4.85-9.59,8.64-3.78,17.06-1.44,25.57-1.57C261.8,123.26,262,123.71,262.15,124Z" style="fill:#fff"/>
+      <path d="M340,154.15a8,8,0,0,1-2.53.92c-6.6,0-13.21,0-19.8-.31s-8.78-3-8.83-9.38v-17c4.85-.39,6.11,2,5.8,6.13a104.72,104.72,0,0,0-.05,11c.15,4.84,1.74,6.29,6.69,6.38,2.2,0,4.41-.17,6.6,0,4,.24,8,.64,12,1Z" style="fill:#fff"/>
+      <path d="M226.81,32.06c4.73-.17,6.09,1.87,4.19,6.31Z" style="fill:#fff"/>
+      <path d="M151.09,46.88c-3.79-.82-7.78-.73-11.7-.82a2.44,2.44,0,0,0-1.79,1.5c-1.37,6.55-2.6,13.12-4,20.38,4-.18,7.53-.07,11-.54a13.1,13.1,0,0,0,10.66-16.29C154.75,49.38,152.75,47.24,151.09,46.88Z" style="fill:#fff"/>
+      <path d="M62.36,46.85a77.87,77.87,0,0,0-11.75-.77,2.7,2.7,0,0,0-1.89,1.73c-1.38,6.44-2.6,12.91-4,20.25,4.59-.28,8.55-.19,12.39-.83,6.75-1.13,11.85-10.75,9.08-17.09A6.15,6.15,0,0,0,62.36,46.85Z" style="fill:#fff"/>
+      <path d="M99.1,9.38C44.37,9.38,0,32.61,0,61.26s44.37,51.88,99.1,51.88,99.1-23.23,99.1-51.88S153.83,9.38,99.1,9.38ZM57.42,75.86A111.58,111.58,0,0,1,46,76.09c-2.23,0-3.22.77-3.47,3s-1.16,4.24-1.18,6.37c0,4.21-2.29,5.06-5.88,4.68-2-.21-4,0-6.46,0,1.53-8,2.92-15.51,4.37-23,1.7-8.75,3.55-17.47,5.1-26.24.44-2.48,1.27-3.44,3.87-3.33,7.88.32,15.83-.07,23.66.71,8.68.87,12.93,6.5,12.65,15.2C78.23,65.73,69.7,74.84,57.42,75.86Zm46.88,0c1.19-6.27,2.27-12.37,3.52-18.44C110,46.78,109.51,46.31,98.63,46c-3.94-.12-5.57,1-6.15,5-1,7.3-2.83,14.48-4.06,21.76-.45,2.67-1.49,3.71-4.22,3.45-2.38-.23-4.79,0-7.87,0,2.44-12.66,4.75-24.63,7.06-36.6.87-4.5,1.66-9,2.77-13.45a3.77,3.77,0,0,1,2.65-2.22,85.39,85.39,0,0,1,8.93-.11L95.28,37.6c3.45,0,6.7,0,9.95,0,14,.2,17.26,4.24,14.56,17.86-1.33,6.73-2.63,13.47-4,20.42Zm42.17-.06a116.87,116.87,0,0,1-11.84.24c-2.13-.05-3,.8-3.26,2.75-.1.89-.23,1.77-.4,2.64-1.92,9.8-2,9.87-13.08,8.17,1.71-8.86,3.35-17.46,5-26.06,1.5-7.75,3.07-15.49,4.49-23.25.36-2,1.13-2.8,3.23-2.76,6.75.12,13.52-.17,20.26.17A27,27,0,0,1,160.46,40c5,2.27,6.95,6.81,7.14,12.16A22.73,22.73,0,0,1,146.48,75.82Z" style="fill:#fff"/>
+    </svg>
+    <div name="screen_ele_3"
+		    style="color:#fff;top:50%;right:-100%;transform: translateY(-50%)"
+		    data-style="color:#fff;top:50%;right:10%;transform: translateY(-50%)"
+		    > <span style="font-size: 30px">PHP+MySQL</span> <br/>
+      <span style="font-size: 20px"> 每当用户访问网站主页时<br/>
+      PHP程序都会自动对数据库进行访问<br/>
+      这就使得用户能实时访问到网站发布的实时信息<br/>
+      也使得网站内容编辑人员不必直接面对冰冷的代码<br/>
+      管理网站也更加轻松自如 </span> </div>
+  </section>
+  <section class="screen" >
+    <div class="screen_bg" style="background:rgba(47,47,47,1.00)"></div>
+    <div name="screen_ele_4" style="transition: 2s ease all ;color:rgba(255,95,0,1.00);top:80%;left:50%;transform: translate(-50%,-50%);text-align: center;white-space: nowrap;opacity: 0"   data-style="transition: 2s ease all ;color:rgba(255,95,0,1.00);top:50%;left:50%;transform: translate(-50%,-50%);text-align: center;white-space: nowrap;opacity:1"> <span style="display:block;font-size: 50px;margin:10px;">想要知道更多？</span> <br />
+      <span style="font-size: 20px"> <a href="https://github.com/gogoend/jackieOnline" target="_blank">欢迎登录github.com/gogoend，为本项目贡献您的代码</a> </span> </div>
+  </section>
+</div>
+<!--全页页脚开始-->
+<footer class="footer">
+  <div class="footer_content">
+    <div class="footer_part"> 
+      <!--全侧页脚社交媒体图片链接开始-->
+      <div class="footer_social_media">
+        <div class="footer_item_icon"> <a href="http://weibo.com/gogoend" target="_blank" >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024.01 829.57">
+            <path d="M75.3,654.9c0,119.3,155.3,215.9,346.7,215.9s346.7-96.6,346.7-215.9S613.5,439,422,439,75.3,535.6,75.3,654.9" transform="translate(0 -84.43)" style="fill:#fff"/>
+            <path d="M430.2,853.2c-169.6,16.8-315.9-59.9-327-171.1s117.6-215,287-231.9C559.8,433.4,706.1,510.1,717,621.3c11.2,111.4-117.4,215.3-286.8,231.9m339-369.5c-14.4-4.4-24.3-7.2-16.8-26.1,16.4-41.1,18.1-76.6.3-102-33.2-47.5-124.2-44.9-228.5-1.3,0,0-32.8,14.3-24.3-11.6,16-51.6,13.6-94.7-11.3-119.7-56.5-56.7-207,2.1-336,131.1C56.1,450.7,0,553.1,0,641.7,0,811,217.2,914,429.5,914,708,914,893.2,752.2,893.2,623.8c.2-77.7-65.2-121.8-124-140.1" transform="translate(0 -84.43)" style="fill:#e6162d"/>
+            <path d="M954.2,173.9c-67.3-74.6-166.4-103-258-83.5h0A39.17,39.17,0,0,0,712.6,167,192.71,192.71,0,0,1,936.3,414.8h0a39.2,39.2,0,0,0,74.6,24.1v-.1a270.82,270.82,0,0,0-56.7-264.9" transform="translate(0 -84.43)" style="fill:#f93"/>
+            <path d="M850.9,267.1a131.69,131.69,0,0,0-125.6-40.6,33.73,33.73,0,1,0,14,66h0a64.43,64.43,0,0,1,74.9,83h0a33.77,33.77,0,0,0,64.3,20.7,132.36,132.36,0,0,0-27.6-129.1" transform="translate(0 -84.43)" style="fill:#f93"/>
+            <path d="M439.6,651.7c-5.9,10.2-19.1,15-29.2,10.7-10.2-4.1-13.3-15.5-7.5-25.4s18.5-14.7,28.5-10.7c10.1,3.7,13.8,15.1,8.2,25.4M385.4,721c-16.4,26.1-51.6,37.6-78,25.6-26-11.9-33.8-42.2-17.4-67.8,16.2-25.4,50.2-36.7,76.4-25.7,26.7,11.4,35.2,41.5,19,67.9m61.7-185.1c-80.7-21.1-171.8,19.2-206.9,90.3-35.7,72.5-1.1,153,80.3,179.3,84.5,27.3,184-14.6,218.6-92.7,34.1-76.6-8.5-155.3-92-176.9" transform="translate(0 -84.43)"/>
+          </svg>
+          </a></div>
+        <div class="footer_item_icon"><a href="https://www.zhihu.com/people/gogoend/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 942.1 921.92">
+            <path d="M588.9,868.6h75.3L689,953.2l135-84.6H983.1V170.5H588.9ZM669,246.3H903V792.8H813.2L723.5,849l-16.3-56.1-38.3-.1.1-546.5ZM522.3,489.9H354.2c5.6-86.9,7.1-165.5,7.1-235.7H525.7s6.3-72.4-27.6-71.6H213.7q16.8-63.15,42.2-130.5s-77.4,0-103.7,69.2C141.3,149.8,109.7,259.7,53.6,372c18.9-2.1,81.5-3.8,118.4-71.3,6.8-18.9,8.1-21.4,16.5-46.6h92.8c0,33.7-3.8,214.6-5.4,235.7H108c-37.7,0-50,75.8-50,75.8H268.7C254.6,725.6,178.7,860.4,41,967c65.8,18.8,131.5-3,163.9-31.8,0,0,73.9-67.1,114.4-222.2L492.7,921.4s25.4-86.3-4-128.3C464.3,764.5,398.5,687,370.5,658.9l-47,37.2q21-67.35,25.3-130.5H546.9c-.2,0-.4-75.7-24.6-75.7Z" transform="translate(-41 -52.1)" style="fill:#0f88eb"/>
+          </svg>
+          </a> </div>
+        <div class="footer_item_icon"><a href="https://www.linkedin.com/in/jackie-han-7a6960102/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1021.3">
+            <path d="M947.4,2.7H76.6C34.1,2.7,0,36.7,0,76.5V950.2c0,39.7,34,73.8,76.6,73.8H947.4c42.5,0,76.6-34,76.6-73.8V76.5C1024,36.7,989.9,2.7,947.4,2.7Z" transform="translate(0 -2.7)" style="fill:#006192"/>
+            <path d="M153.1,385.6H303.4V873.5H153.1Zm76.6-241.1c48.2,0,87.9,39.7,87.9,87.9s-39.7,87.9-87.9,87.9-87.9-39.7-87.9-87.9c0-51,39.7-87.9,87.9-87.9" transform="translate(0 -2.7)" style="fill:#fff"/>
+            <path d="M399.9,385.6H544.6v65.2h2.8c19.9-39.7,70.9-79.4,144.7-79.4,153.2,0,181.5,102.1,181.5,232.6V870.7H723.3V632.4c0-56.7,0-130.5-79.4-130.5s-90.8,62.4-90.8,124.8V867.8H402.8V385.6Z" transform="translate(0 -2.7)" style="fill:#fff"/>
+          </svg>
+          </a> </div>
+        <div class="footer_item_icon"> <a href="https://github.com/gogoend/" target="_blank">
+          <svg id="c5f8442e-ac6d-414b-8da5-0bf587786c59"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1025">
+            <circle cx="512" cy="512" r="501.52" style="fill:#fff"/>
+            <path d="M512,0C229.25,0,0,229.25,0,512,0,738.25,146.69,930.13,350.16,997.81c25.59,4.69,34.94-11.12,34.94-24.62,0-12.19-.47-52.56-.72-95.31C242,908.81,211.91,817.5,211.91,817.5c-23.31-59.12-56.84-74.87-56.84-74.87-46.53-31.75,3.53-31.12,3.53-31.12,51.41,3.56,78.47,52.75,78.47,52.75,45.69,78.25,119.88,55.63,149,42.5,4.65-33,17.9-55.62,32.5-68.37C304.91,725.44,185.34,681.5,185.34,485.31c0-55.94,20-101.56,52.66-137.41-5.22-13-22.84-65.09,5.06-135.56,0,0,42.94-13.75,140.81,52.5,40.81-11.41,84.59-17,128.13-17.22,43.5.19,87.31,5.88,128.19,17.28,97.69-66.31,140.69-52.5,140.69-52.5,28,70.53,10.38,122.56,5.13,135.5,32.81,35.84,52.63,81.47,52.63,137.41,0,196.69-119.75,240-233.81,252.69,18.44,15.88,34.75,47,34.75,94.75,0,68.44-.69,123.63-.69,140.5,0,13.63,9.31,29.56,35.25,24.56C877.44,930,1024,738.13,1024,512,1024,229.25,794.75,0,512,0Z"/>
+          </svg>
+          </a> </div>
+      </div>
+      <!--全侧页脚社交媒体图片链接开始结束--> 
+      <!--全侧页脚版权信息开始-->
+      <div class="footer_copyright">
+        <p>©2017 <a href="mailto:JackieHan@H-Cube.ga">JackieHan@H-Cube.ga</a></p>
+      </div>
+      <!--全页脚版权信息结束--> 
+    </div>
+  </div>
+</footer>
+<!--全页页脚结束--> 
+<script>
+	
+	pageBgm=document.getElementById("page_bgm");
+	bgmCtrl=document.getElementById("bgm_ctrl");
+	pageBgm.volume=0.5;
+
+	function playBgm(){
+		pageBgm.play();
+		bgmCtrl.className="side_ctrl rotating";
+	}
+		
+		function pauseBgm(){
+		pageBgm.pause();
+		bgmCtrl.className="side_ctrl";
+	}
+	
+	window.onload=bgmCtrl.onclick=function(){
+		if(pageBgm.paused==true){playBgm();}
+		else{pauseBgm();}
+	}
+	
+	</script> 
+<script>
+	
+		screenWrap=document.getElementById("screen_wrap");//获得整个幻灯片整体，设置其top值即可实现位移
+		screens=screenWrap.getElementsByTagName("section");//获得每一张幻灯片
+		function play_transition(){
+			for(i=0;i<screens.length;i++){
+			//判断当前幻灯片距离浏览器窗口顶端的距离
+			if(
+				//html、body等元素css别加overflow*:hidden属性，不然滚动条距离顶部的距离scrollTop就获取不到了
+				screens[i].offsetTop-document.documentElement.scrollTop<=(window.innerHeight/3)&&
+				screens[i].offsetTop-document.documentElement.scrollTop>=-window.innerHeight){
+				elementsInScreen=document.getElementsByName("screen_ele_"+i);
+				//console.log(elementsInScreen);
+				//如果这个距离小于0，就把幻灯片内data-style的值赋给style
+				for(j=0;j<=elementsInScreen.length-1;j++){
+				elementsInScreen[j].style.cssText=elementsInScreen[j].style.cssText+elementsInScreen[j].dataset.style;
+				}
+			}
+		}
+		}
+		//？？不使用匿名函数而直接写window.onscroll=play_transition()会直接不通过事件而直接执行这个函数
+		window.onload=window.onscroll=window.onclick=function(){
+			play_transition();
+		}
+		
+	</script> 
+<!--百度统计代码--> 
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "../../hm.baidu.com/hm6b1d.js?e246523d803ea7e3b3ac516316d773aa";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+<!--百度统计代码结束->
+	</body>
+</html>
+

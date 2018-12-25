@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /cms_core/
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/active/
+Disallow: /img/cms_ui/
+Disallow: /img/font_icon
+Disallow: /img/web_ui/
+Allow: /img/banner
+Allow: /img/article_img
+Allow: /

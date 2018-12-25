@@ -1,0 +1,283 @@
+<html><head>
+
+<title>H-Cube.ga 网站内容管理系统 自述</title>
+<style>
+body{
+	background:#EEE
+	}
+
+.container{
+	margin:0 auto;
+	width:70%;
+	max-width:1920px;
+	background:#FFF;
+	padding:20px 60px;
+	box-shadow:3px 5px 5px rgba(0,0,0,0.5)
+	}
+	
+	a:link,a:visited{
+		color:#009;
+		text-decoration:none;
+		}
+		a:hover,a:active{
+		color:#009;
+		text-decoration:underline;
+		}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>H-Cube.ga 网站内容管理系统 自述</h1>
+  <p><a target="_blank" href="https://github.com/gogoend/jackieOnline/wiki/H-Cube.ga-CMS-%E8%87%AA%E8%BF%B0">本文档的最新版本请点击此处查看</a></p>
+  <hr/>
+  <h2>一 总述</h2>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 本网站内容管理系统：代码部分使用Adobe Dreamweaver 和Zend Studio进行编写，Dreamweaver主要用于编写HTML、CSS、JS代码，Zend Studio主要用于编写PHP代码；前端用户界面主要使用Adobe Photoshop、Adobe Illustrator进行设计。</p>
+  <p>运行环境：</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 服务器端：</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PHP 5.3.29+</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PDO扩展：用于连接数据库（兼容更新的PHP 7）</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GD扩展：用于生成图片</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Apache/Nginx</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MySQL/MariaDB</p>
+  <p><br>
+  </p>
+  <h2>二 站点文件结构</h2>
+  <p>database</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /h_cube_ga_db.sql：数据库脚本，将该文件导入数据库后即可恢复网站所有信息</p>
+  <p>wwwroot</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /admin：管理员相关文件夹</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /admin_panel.php：后台管理主页</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /article_publish_handler.php：处理文章发布请求</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /article_table.php：文章管理</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /editor.php：新建文章</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /index.html：跳转登录页</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sign_in.html：登录页面</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sign_up.html：注册页面</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /audio：网站音频</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /auth：用户认证相关</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sign_in_handler.php：处理登录请求</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sign_out_handler.php：处理退出登录请求</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sign_up_ajax.php：处理注册页面ajax</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sign_up_handler：处理用户注册请求</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cms_core：CMS系统核心文件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /config：配置文件目录</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mydb.config.php：保存数据库登录凭据</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /mydb2.config.php：数据库配置示例文件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /include：包含文件目录</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /db_test.inc.php：检查数据库连接函数</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /public_function.inc.php：公共函数</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /publish_article.class.php：定义文章发布类</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sign_up_class.php：定义用户注册类</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /view_article.class.php：定义文章查看类</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /css：CSS文件目录</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cms_page.css：内容页面样式</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /global.css：网站全局样式</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /navi.css：导航栏背景定位</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /html：前端页面目录</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /assets：定义页面组件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /footer.php：页脚组件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /nav.php：导航栏组件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /share.php：分享组件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /404.html：404错误页</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /about.html：关于页面</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /list.php：实现文章列表</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /view.php：实现文章查看</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /img：图像文件目录</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /active：动态页面图像</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /captcha.php：用于生成验证码图片</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /article_img：文章内容图片</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /banner：banner图片</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /cms_ui：cms前台UI</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /font_icon：font-icon文件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /hkj_icon.ttf</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /hkj_icon.woff</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /web_ui：cms后台UI</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /js：javascript文件目录</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /public.js：公共js</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /share.js：文章分享js</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sign_in_ui.js：登陆、注册js</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /slides.js：轮播图js</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /tab_page.js：标签页js</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /oobe：数据库配置生成工具</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /config_download.php：用于下载已经生成好的配置文件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /index.html：配置工具主界面</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /favicon.ico：网站图标</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /index.php：主页文件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /robots.txt：SEO相关，限制搜索引擎爬虫爬取相关页面</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sitemap.php：SEO相关，用于生成sitemap.xml文件</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /sitemap.xml：SEO相关，sitemap文件，方便搜索引擎爬取页面</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /urls.php：SEO相关，用于向百度推送新增的页面</p>
+  <p><br>
+  </p>
+  <h2>三 JS代码介绍</h2>
+  <h3>1） 文章编辑器</h3>
+  <p><span style="text-indent: 24px; caret-color: red;">功能：</span></p>
+  <p>1、 定时保存：保存功能借助浏览器自带的LocalStorage实现，文章标题和文章内容使用普通的字符串保存，其他的附加信息使用JSON来保存；当页面加载时，会检查LocalStorage中是否有内容，如果存在对应字段则会把对字段写入到页面中对应的位置；</p>
+  <p>2、 富文本编辑器：本编辑器主要使用浏览器所提供的document.execCommend() API来进行编写，编辑器工具栏按钮使用Font-icon实现，通过对工具栏addEventListener，来监听click了哪一个子节点，执行对应的定义好的方法。</p>
+  <p style="text-indent: 0">通过启用iframe下window的DesignMode，将contentEditable设置为true，来使得iframe可以被编辑；</p>
+  <p>3、 纯文本编辑器：本编辑器还具有纯文本编辑模式，点击切换后，富文本模式下iframe body中的内容会输入到纯文本模式下的textarea中，以html标记的形式展现出来，如果用户输入了&lt;script&gt;&lt;form&gt;&lt;button&gt;&lt;input&gt;等可能会执行恶意代码的标签，编辑器在保存和提交时进行过滤。</p>
+  <p><span style="text-indent: 28px; caret-color: red;">已知的问题：对浏览器依赖较强，兼容性比较差。</span></p>
+  <h3>2） 管理员注册页面</h3>
+  <p style="text-indent: 0">概述：</p>
+  <p style="text-indent: 0">管理员注册分为两个阶段，第一个阶段是验证管理员的信息是否正确，管理员信息已经由站长提前录入数据库中，第二个阶段是注册网站用户，这一步完成后该网站用户即为管理员；</p>
+  <p style="text-indent: 0">功能：</p>
+  <p>1、 使用ajax验证用户输入：第一步注册过程中，用户输入的是管理员的工牌号和站长提前分配好的密钥，当点击“继续”按钮时，如果这一步用户输入合法，页面不会进行跳转，而是会在当前页面静默向服务器提交用户输入的数据，如果用户输入正确（即工牌号）、密码输入正确，且账户没有被激活），则服务器返回字符串“true”，则管理员注册可进入下一阶段；否则会在当前页面提示错误信息；</p>
+  <p>2、 使用正则表达式验证用户输入：使用字符串方法str.match(RegExp)返回的true和false进行判断。</p>
+  <p style="text-indent: 0"><strong>js正则表达式总结：</strong></p>
+  <p style="text-indent: 0">匹配数字以外的字符：/[^0-9]/</p>
+  <p style="text-indent: 0">匹配空白字符：/\s+/</p>
+  <p style="text-indent: 0">匹配开头第一位的数字：/^[0-9_]{1}/</p>
+  <p style="text-indent: 0">匹配下划线、数字、字母、汉字以外的字符：/[^_0-9a-zA-Z\u4e00-\u9fa5]/</p>
+  <p style="text-indent: 0">匹配电子邮箱地址：/^([0-9A-Za-z_\-\.])+@{1}[0-9A-Za-z_\-]+(\.[a-zA-z0-9\-]+)+$/</p>
+  <p style="text-indent: 0">匹配这些字符以外的字符：/[^0-9a-zA-Z~!@\%\^&amp;\(\)\-_=\+,\.&lt;&gt;]/</p>
+  <p style="text-indent: 0">匹配任何html标签：/&lt;\/?.+?&gt;/gi</p>
+  <p style="text-indent: 0">匹配html标签：/&lt;\/?script[\S\s]*?\1&gt;|&lt;\/?(html|body|meta|style|title|link|base|head|i?frame|frameset|object|applet|embed|input|button|form)[^&gt;]*&gt;/gi</p>
+  <p style="text-indent: 0"><strong>正则表达式修饰符：</strong></p>
+  <p style="text-indent: 0">i：不区分大小写匹配</p>
+  <p style="text-indent: 0">g：全文匹配-查找所有匹配，不会在找到第一个时就停止匹配</p>
+  <p style="text-indent: 0">……</p>
+  <h3>3） 轮播图</h3>
+  <p style="text-indent: 0">功能：定时轮换图片</p>
+  <p style="text-indent: 0">实现方式：</p>
+  <p style="text-indent: 28px">整个轮播图为一个ul，其中的图片为多个li，将ul和li的宽高都设置为和ul的父级元素一样大，即为父级元素设为固定宽高，相对定位，其overflow属性设为hidden，ul和li宽高均为100%，ul、li设为绝对定位；在js中获得DOM中的左右控制按钮，通过执行相关函数改变ul的设置left值（第一张为0%，第二张为-100%……），控制ul在父级元素中的位置；通过setInterval()，定时执行轮换函数，即可实现定时换片，当mouseover轮播图时，执行clearInterval()使得轮播图暂停播放，mouseout时轮播图重新开始播放；</p>
+  <p style="text-indent: 28px"><br>
+  </p>
+  <h3>4） 标签页</h3>
+  <p style="text-indent: 0">功能：在一个页面上实现一个虚拟页面</p>
+  <p style="text-indent: 0">实现方式：</p>
+  <p style="text-indent: 28px">在页面上定义相同数量的标签和标签页，首先getElementsByTagName分别获取到标签数组和标签页数组，循环遍历onclick事件，当click某个标签时，首先把所有标签的style设为未点击样式，标签页的display设为none，再将所点击标签的style设置为激活样式，对应的标签页的display设为block</p>
+  <p style="text-indent: 0">已知的问题：</p>
+  <p style="text-indent: 28px">一个页面上仅能够只设置一个标签页，如果设置两个或更多，第二个以及之后的就失效了；</p>
+  <p style="text-indent: 0"><br>
+  </p>
+  <h3>5）整页网页幻灯片（仿H5场景秀）</h3>
+  <p style="text-indent: 0"><span style="caret-color: red;">实现方式：</span></p>
+  <p style="text-indent: 28px">将html、body的宽高设置为100%，将幻灯片容器的宽度设为100%，高度设为幻灯片数量×100%；首先通过id获得幻灯片容器，继续在幻灯片容器中使用getElementsByTagName()获得每个幻灯片，当window.onload以及window.onscroll时，遍历这个数组，当其中的某个幻灯片在浏览器可视区域时(判断每个幻灯片元素距离浏览器顶部的距离，当幻灯片距离网页顶部的距离-滚动条卷起来的高度小于0且大于负窗口高度时，则幻灯片位于可视区域内)，遍历这个幻灯片中的元素，每个元素都设置了style内联样式和id-style用于存储变换后的style值，将id-style的值赋给style，（之前已经为元素设置好了transition），即可看到动画效果的过渡。</p>
+  <h3>6） 分享按钮</h3>
+  <p style="text-indent: 0">功能：将页面分享到社交媒体，吸引更多浏览量</p>
+  <p style="text-indent: 0">实现方式：</p>
+  <p style="text-indent: 4px">新浪微博、QQ空间等社交媒体的分享页面链接中直接包含了待分享页面的URL以及一些概述，将这些信息替换即可，通过在页面上点击相应按钮，弹出相应窗口。</p>
+  <h2>四、PHP代码介绍</h2>
+  <h3>1）随机获得字符串</h3>
+  <p><span style="caret-color: red;">实现方式：</span></p>
+  <p style="text-indent: 28px">首先定义一串字符$str用于设置一个字典，之后生成的随机字符从中抽取；然后使用str_shuffle($str)方法第一次打乱这个字符串得到$char；然后当字符串长度小于所需要的字符串长度$length时，使用substr($char,rand(0,strlen($char)-1),1)抽取一个数字，使用循环重复$length次。</p>
+  <p style="text-indent: 28px"><br>
+  </p>
+  <h3>2）PDO连接MySQL数据库进行查询</h3>
+  <p>概述：</p>
+  <p style="text-indent: 28px">在最新版本的PHP7中，默认的几个MySQL函数已经被淘汰，连接MySQL数据库的其它方式有MySQLi和PDO；由于PDO扩展性较强，故本CMS主要使用PDO来连接数据库。</p>
+  <p style="text-indent: 28px">数据库主要用于存储网站内的数据，PHP发起查询，根据查询语句来执行MySQL中的相应功能，查询结果返回到PHP继续处理，如本CMS中的文章列表功能、用户登录功能。</p>
+  <p>实现方式：</p>
+  <p>1、 连接数据库：配置数据源</p>
+  <p style="text-indent: 0">$dsn="mysql:host=$mysql_server_name;dbname=$mysql_database"</p>
+  <p>数据源和数据库用户名密码等配置信息作为一个单独文件提取出来，当需要连接数据库时把这个文件包含到其中即可；</p>
+  <p>2、 新建连接对象</p>
+  <p style="text-indent: 0">$pdo=new PDO($dsn,$mysql_username,$mysql_password)</p>
+  <p>3、 定义SQL语句</p>
+  <p style="text-indent: 0">例如：$sql=”SELECT 列 FROM 表 WHERE 列=”值”” ORDER BY “列”</p>
+  <p>4、 执行查询</p>
+  <p style="text-indent: 0">$result=$pdo-&gt;exec($sql)</p>
+  <p style="text-indent: 0">或</p>
+  <p style="text-indent: 0">$result=$pdo-&gt;query($sql)</p>
+  <p>5、 遍历结果集并插入到article_result[]数组中</p>
+  <p style="text-indent: 0">while($row=$result-&gt;fetch()){</p>
+  <p style="text-indent: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;article_result[]=$row;</p>
+  <p style="text-indent: 0">}</p>
+  <p style="text-indent: 0"><span style="text-indent: 28px; caret-color: red;">在之后的操作中，$this-&gt;article_result[]在其它文件中被继续调用，如遍历输出等；但如果其中的SQL语句使用有用户提交的字符串拼接而成，则这条语句将存在被注入的危险，因此这里还需要对这条SQL语句进行预编译。</span></p>
+  <p>1、 定义SQL语句，使用占位符”?”或者“:para“（前者需要按顺序输入，后者可无需按顺序输入）</p>
+  <p style="text-indent: 0">例如：$sql=”SELECT 列 FROM 表 WHERE 列=”:值1 :值2”” ORDER BY “列”</p>
+  <p>2、 准备SQL语句</p>
+  <p style="text-indent: 0">$stmt=$pdo-&gt;prepare($sql)</p>
+  <p>3、 定义一个$data数组，把查询条件（也就是上文的“值1”“值2”）以关联数组存入其中</p>
+  <p style="text-indent: 0">$data=array(“:值1”=&gt;$_GET(‘a’), “:值1”=&gt;$_GET(‘b’))；</p>
+  <p>4、 执行准备好的SQL语句，把查询条件数组插入其中</p>
+  <p style="text-indent: 0">$stmt-&gt;execute($data)</p>
+  <p>6、 遍历结果集并插入到article_result[]数组中</p>
+  <p style="text-indent: 0">while($row=$stmt-&gt;fetch()){</p>
+  <p style="text-indent: 0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;article_result[]=$row;</p>
+  <p style="text-indent: 0">}</p>
+  <h3>3）生成一个图片验证码</h3>
+  <p><span style="text-indent: 28px; caret-color: red;">该功能需要GD库的支持</span></p>
+  <p><span style="text-indent: 28px; caret-color: red;">实现方式：</span></p>
+  <p>1、 开始session，新建立一张图片，长为100，高为30；</p>
+  <p style="text-indent: 0">session_start ()</p>
+  <p style="text-indent: 0">$image=imagecreatetruecolor(100, 30);</p>
+  <p>2、 为图片分配一个背景颜色，填充背景颜色</p>
+  <p style="text-indent: 0">$bgcolor=imagecolorallocate($image, 255, 255, 255);</p>
+  <p style="text-indent: 0">imagefill($image, 0, 0, $bgcolor);</p>
+  <p>3、 设置验证码上的字体大小，为字体分配颜色，随机获得已经定义好的字典中的某个字符</p>
+  <p style="text-indent: 0">$data='bcdefghjkmnpqrstwxy23456789';</p>
+  <p style="text-indent: 0">$fontcontent=substr($data, rand(0,strlen($data)),1);</p>
+  <p style="text-indent: 0">$captcha_code.=$fontcontent;</p>
+  <p>4、 设置字符在图片上的位置$x，$y，并进行一定量的随机偏移，之后将文字写入到图片上</p>
+  <p style="text-indent: 0">$x=($i*100/4)+rand(2,5);</p>
+  <p style="text-indent: 0">$y=rand(5,10);</p>
+  <p style="text-indent: 0">imagestring($image, $fontsize, $x, $y, $fontcontent, $fontcolor);</p>
+  <p>5、 3~4过程重复次数$i由所需验证码长度决定，这里是4</p>
+  <p>6、 将得到的验证码存入到session数组中，这样前端提交到后端时可以检查验证码是否输入正确；</p>
+  <p>7、 加入干扰像素</p>
+  <p style="text-indent: 0">为干扰像素分配颜色</p>
+  <p style="text-indent: 0">$pointcolor=imagecolorallocate($image, rand(50,200), rand(50,200), rand(50,200));</p>
+  <p style="text-indent: 0">写入干扰点到图片</p>
+  <p style="text-indent: 0">imagesetpixel($image, rand(1,99), rand(1,29), $pointcolor);</p>
+  <p style="text-indent: 0">插入多少点，这一步就执行多少次</p>
+  <p>8、 加入干扰线</p>
+  <p style="text-indent: 0">为干扰线分配颜色</p>
+  <p style="text-indent: 0">$linecolor=imagecolorallocate($image, rand(80,220), rand(80,220), rand(80,220));</p>
+  <p style="text-indent: 0">写入干扰线到图片</p>
+  <p style="text-indent: 0">imageline($image, rand(1,99),rand(1,29),rand(1,99),rand(1,29), $linecolor);</p>
+  <p style="text-indent: 0">插入多少点，这一步就执行多少次</p>
+  <p>9、 在HTTP头声明文件类型，例如image/png</p>
+  <p style="text-indent: 0">header('content-type:image/png');</p>
+  <p>10、<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 9px; line-height: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>以上一步所设置的格式输出图片</p>
+  <p style="text-indent: 0">imagepng($image);</p>
+  <p style="text-indent: 0"><span style="text-indent: 28px; caret-color: red;">之后在前端HTML中直接使用&lt;img&gt;标签，将其src值设为该PHP的URL即可将验证码展现到页面上。</span></p>
+  <p>11、销毁图片，释放资源</p>
+  <p style="text-indent: 0">imagedestroy($image);</p>
+  <p style="text-indent: 0"><br>
+  </p>
+  <h3>4）用户注册密码加密</h3>
+  <p><span style="text-indent: 28px; caret-color: red;">实现方式：</span></p>
+  <p>1、 获取用户输入的密码，随机生成一个字符串；</p>
+  <p style="text-indent: 0">$this-&gt; salt=get_random_char(8);</p>
+  <p>2、 对随机字符串进行base64编码，再对用户输入的密码和编码过的字符串进行sha1计算，；</p>
+  <p style="text-indent: 0">$this-&gt;password=md5(sha1($_POST['pwd'].base64_encode($this-&gt;salt)));</p>
+  <p>3、 将sha1计算过的密码和base64编码过的两个字符串相连再进行md5计算，生成一个长度为32字节的字符串，把这个字符串和随机字符串分别存入数据库的两个字段中；</p>
+  <p>4、 用户登录网站，则通过以上方式校验生成的字符串是否和数据库中保存的字符串一致，如果一致则校验通过，登录成功。</p>
+  <p><br>
+  </p>
+  <h3>5） SiteMap生成工具</h3>
+  <p style="text-indent:0">实现方式：</p>
+  <p style="text-indent:0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SiteMap实质上是一个XML文件，DOM结构大致如下</p>
+  <p style="text-indent:0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;urlset&gt;</p>
+  <p style="text-indent:4px">&lt;url&gt;</p>
+  <p style="text-indent:4px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;loc&gt;URL&lt;/loc&gt;</p>
+  <p style="text-indent:4px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;lastmod&gt;上次修改时间&lt;/lastmod&gt;</p>
+  <p style="text-indent:4px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;changefreq&gt;更新频率&lt;/changefreq&gt;</p>
+  <p style="text-indent:4px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;priority&gt;优先级（0.0-1.0的小数）&lt;/priority&gt;</p>
+  <p style="text-indent:4px">&lt;/url&gt;</p>
+  <p style="text-indent:4px">&lt;url&gt;…&lt;/url&gt;&lt;url&gt;…&lt;/url&gt;</p>
+  <p style="text-indent:4px">&lt;/urlset&gt;</p>
+  <p style="text-indent:4px">首先遍历数据库中所有允许被检索到的文章，之后写入上述结构中，遍历完成后，把得到的文件存为sitemap.xml，放在网站根目录下即可。</p>
+  <p><br>
+  </p>
+  <h2>五 配置方法</h2>
+  <p><span >1、 运行MySQL数据库服务器，使用命令行打开mysql.exe；</span><br>
+  </p>
+  <p>2、 使用您的用户名和密码登录；</p>
+  <p>3、 选择您的数据库</p>
+  <p><span style="caret-color: red;">USE 数据库名</span></p>
+  <p>4、 运行database文件夹SQL脚本文件</p>
+  <p style="text-indent: 0">SOURCE 当前文件夹绝对路径\database\h_cube_ga_db.sql</p>
+  <p>5、 如果提示成功，则进入下一步操作；</p>
+  <p>6、 使用浏览器打开网站根目录/oobe/index.html，输入您的数据库相关信息，生成数据库配置文件</p>
+  <p>7、 进入wwwroot\cms_core\config，将以上生成的数据库配置文件上传到其中，即可完成配置。</p>
+  <div style="text-align:right">
+  
+  本网站由<br/>哈尔滨师范大学&nbsp;&nbsp;&nbsp;计算机科学与信息工程学院<br/>2015数字媒体技术5班&nbsp;&nbsp;&nbsp;gogoend<br/>设计、开发<br/>
+  
+  </div>
+</div>
+</body>
+</html>

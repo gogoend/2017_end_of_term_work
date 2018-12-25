@@ -1,0 +1,18 @@
+.navi{ background:url("../img/cms_ui/navi.png") top left no-repeat; }
+.navi_after{ width:39px; height:108px; background-position:-10px -10px; }
+.download:hover{ width:195px; height:108px; background-position:-59px -10px; }
+.download{ width:195px; height:108px; background-position:-264px -10px; }
+.navi_whole_hover{ width:1024px; height:108px; background-position:-10px -128px; }
+.navi_whole{ width:1024px; height:108px; background-position:-10px -246px; }
+.navi_before{ width:31px; height:79px; background-position:-469px -10px; }
+.official_site:hover{ width:152px; height:79px; background-position:-510px -10px; }
+.game_for_fresh:hover{ width:152px; height:79px; background-position:-672px -10px; }
+.game_trick:hover{ width:151px; height:79px; background-position:-834px -10px; }
+.player_center:hover{ width:152px; height:79px; background-position:-10px -364px; }
+.player_club:hover{ width:152px; height:79px; background-position:-172px -364px; }
+.official_site{ width:152px; height:79px; background-position:-334px -364px; }
+.game_for_fresh{ width:152px; height:79px; background-position:-496px -364px; }
+.game_trick{ width:151px; height:79px; background-position:-658px -364px; }
+.player_center{ width:152px; height:79px; background-position:-819px -364px; }
+.player_club{ width:152px; height:79px; background-position:-10px -453px; }
+
